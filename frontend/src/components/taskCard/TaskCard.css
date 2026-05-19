@@ -1,6 +1,7 @@
 .taskCard {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 16px;
+    border-radius: 10px;
     margin-bottom: 8px;
 }
 .taskCard input[type="text"] {
@@ -68,4 +69,40 @@
     display: block;
     padding: 8px;
     margin-right: 8px;
+}
+.taskCard h3 {
+    margin: 10px 0;
+    color: blueviolet;
+    font-size: large;
+}
+.separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.separator span {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: small;
+    border: 1px solid #ccc;
+}
+.taskTextEdits {
+    display: flex;
+    flex-direction: column;
+}
+.taskTextEdits input {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+.taskTextEdits textarea {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
 }

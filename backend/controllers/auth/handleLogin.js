@@ -15,6 +15,8 @@ const handleLogin = async (req, res) => {
         if (!isMatch) {
             return res.status(400).json({ error: true, message: "Invalid username or password" });
         }
+        // Clear any prior token and set new one
+        res.clearCookie("token", { httpOnly: true, sameSite: 'lax' });
         res.cookie("token",
             jwt.sign({ userId: user._id }, JWT_SECRET),
             { httpOnly: true, sameSite: 'lax' }

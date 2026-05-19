@@ -7,6 +7,7 @@ export default function TaskCard(props) {
   const [title, setTitle] = useState(task.title)
   const [description, setDescription] = useState(task.description)
   const [status, setStatus] = useState(task.status || 'todo')
+  let [assignedTo, setAssignedTo] = useState(task.assignedTo || '')
 
   const refresh = () => {
     if (typeof props.onChange === 'function') return props.onChange()
@@ -20,7 +21,7 @@ export default function TaskCard(props) {
         method: 'PUT',
         credentials: 'include',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, description, status })
+        body: JSON.stringify({ title, description, status, assignedTo })
       })
       if (res.ok) {
         setIsEditing(false)
@@ -48,10 +49,18 @@ export default function TaskCard(props) {
     <div className='taskCard'>
       {isEditing ? (
         <form onSubmit={handleSave}>
+            <div className='taskTextEdits'>
           <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required />
-          <br />
           <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="Description" />
+                  <input type="text" placeholder="Assigned to" value={assignedTo} onChange={e => setAssignedTo(e.target.value)} />
+
+          </div>
           <br />
+
+
+        <div>
+
+
           <label>
             Status:
             <select value={status} onChange={e => setStatus(e.target.value)}>
@@ -60,17 +69,22 @@ export default function TaskCard(props) {
               <option value="done">done</option>
             </select>
           </label>
+
+
+          </div>
+
           <br />
           <button type="submit">Save</button>
           <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
         </form>
       ) : (
         <>
+        <div className='separator'>
           <h3>{task.title}</h3>
+          <span>{task.status || 'todo'}</span>
+        </div>
           <p>{task.description}</p>
-          <div>
-            <strong>Status:</strong> {task.status || 'todo'}
-          </div>
+          <div>{task.assignedTo && <strong>Assigned to:</strong>} {task.assignedTo}</div>
           <div className='taskCardActions'>
             <button onClick={() => setIsEditing(true)}>Edit</button>
             <button onClick={handleDelete} style={{ marginLeft: 8 }}>Delete</button>

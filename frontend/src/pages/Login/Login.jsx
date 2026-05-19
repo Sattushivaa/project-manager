@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './Login.css'
 
 export default function Login() {
   const navigate = useNavigate();
@@ -35,16 +36,16 @@ export default function Login() {
   }
 
   return (
-    <>
+    <div className='loginContainer'>
       <h1>{method}</h1>
       <form onSubmit={handleSubmit}>
         <input name='username' type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
         <input name='password' type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">{method}</button>
-        <button type="button" onClick={() => setMethod(method === 'Login' ? 'Register' : 'Login')}>
+        <button className='switchBtn' type="button" onClick={() => setMethod(method === 'Login' ? 'Register' : 'Login')}>
           {method === 'Login' ? 'Switch to Register' : 'Switch to Login'}
         </button>
       </form>
-    </>
+    </div>
   )
 }

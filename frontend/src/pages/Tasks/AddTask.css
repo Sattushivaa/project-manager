@@ -1,0 +1,33 @@
+.newTaskInputs {
+    display: grid;
+    flex-direction: row;
+    grid-auto-columns: 1fr 1fr;
+}
+.newTaskInputs input[type="text"] {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+.newTaskInputs textarea {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+.newTaskRibbon {
+    display: flex;
+    justify-content: space-between;
+}
+.newTaskRibbon button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}

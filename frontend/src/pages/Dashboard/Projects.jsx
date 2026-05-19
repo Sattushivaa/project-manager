@@ -8,6 +8,18 @@ export default function Projects() {
 
     let [projects, setProjects] = useState([]);
 
+    const LOGOUT = async () => {
+        try {
+          await fetch('/api/auth/logout', { 
+            method: 'POST', 
+            credentials: 'include' 
+          });
+        } catch (err) {
+          console.error('Logout error:', err);
+        }
+        navigate('/login', { replace: true });
+      }
+
     useEffect(() => {
         fetch('/api/checkAuth', { method: 'POST', credentials: 'include' })
             .then(res => res.json())
@@ -33,9 +45,12 @@ export default function Projects() {
                 setProjects([]);
             });
     }, []);
+
   return (
     <>
-    <div>Projects</div>
+    <div className='projectsHeader'>
+      <h1>Projects</h1>
+    </div>
     <div className='createProjectBtnContainer'>
     <button className='createNewProjectBtn' onClick={() => navigate("/projects/create")}>Create New Project</button>
     </div>
@@ -46,6 +61,8 @@ export default function Projects() {
         }): <p>No projects found.</p>
     }
     </div>
+    
+      <button className='logoutBtn' onClick={LOGOUT}>Logout</button>
     </>
   )
 }

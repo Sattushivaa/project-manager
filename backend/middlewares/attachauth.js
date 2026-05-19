@@ -5,8 +5,11 @@ const JWT_SECRET = process.env.JWT_SECRET || "default_jwt_secret"
 const attachAuth = async (req, res, next) => {
     try {
         const token = req.cookies?.token
-        const decoded = jwt.verify(token, JWT_SECRET)
+        const decoded = jwt.verify(token, JWT_SECRET);
         req.user = decoded;
+        if (decoded.userId && !decoded._id) {
+            req.user._id = decoded.userId;
+        }
         next();
     } catch (error) {
         res.status(401).json({ error: true, message: "Invalid token" });

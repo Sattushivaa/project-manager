@@ -4,14 +4,15 @@ import Projects from './pages/Dashboard/Projects.jsx'
 import Login from './pages/Login/Login.jsx'
 import Tasks from './pages/Tasks/Tasks.jsx'
 import CreateProject from './pages/Projects/CreateProject.jsx'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import './App.css'
 
 export default function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <header className="App-header">
-          <h1>Project Manager</h1>
-        </header>
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<Projects />} />

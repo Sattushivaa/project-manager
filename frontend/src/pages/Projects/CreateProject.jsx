@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import './CreateProject.css';
 
 export default function CreateProject() {
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ export default function CreateProject() {
     }
 
   return (
-    <>
+    <div className='createProjectContainer'>
     <div>CreateProject</div>
     <form onSubmit={handleSubmit}>
         <input type="text" placeholder='Project Name' value={name} onChange={(e) => setName(e.target.value)} /> 
@@ -43,6 +44,6 @@ export default function CreateProject() {
         <br />
         <button type='submit'>Create Project</button>
     </form>
-    </>
+    </div>
   )
 }

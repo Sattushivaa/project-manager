@@ -36,6 +36,8 @@ export default function Tasks() {
       <h2>Tasks</h2>
       <AddTask projectId={projectId} onAdd={fetchTasks} />
 
+<hr /><br />
+
       <div className='taskboxActions'>
         <input
           placeholder="Search by title"
@@ -51,7 +53,6 @@ export default function Tasks() {
         </select>
         <button onClick={fetchTasks} style={{ marginLeft: 8 }}>Refresh</button>
       </div>
-
       <div className='tasksContainer'>
         {filtered.length === 0 ? (
           <p>No tasks found.</p>
