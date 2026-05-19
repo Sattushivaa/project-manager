@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { handleUpdateTask } from "../controllers/tasks/handleUpdate";
-import { deleteTask } from "../controllers/tasks/handleDelete";
+import { handleUpdateTask } from "../controllers/tasks/handleUpdate.js";
+import { deleteTask } from "../controllers/tasks/handleDelete.js";
 const tasksRoute = new Router();
 
 tasksRoute.put("/:id", handleUpdateTask)

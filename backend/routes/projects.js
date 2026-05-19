@@ -6,9 +6,12 @@ import { getTasksByProject } from "../controllers/tasks/getTasksByProject.js";
 import { updateProject } from "../controllers/projects/handleUpdate.js";
 import { deleteProject } from "../controllers/projects/handleDelete.js";
 import { createTask } from "../controllers/tasks/handleCreate.js";
+import { countTasks } from "../controllers/projects/countTasks.js";
 
 projectsRoute.get("/", getAllProjects)
 projectsRoute.post("/", createProject)
+
+projectsRoute.post("/countTasks", countTasks)
 
 projectsRoute.get("/:id", getTasksByProject)
 projectsRoute.put("/:id", updateProject)

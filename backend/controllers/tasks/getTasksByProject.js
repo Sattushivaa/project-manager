@@ -1,3 +1,5 @@
+import { Task } from "../../models/Task.js";
+
 const getTasksByProject = async (req, res) => {
     try {
         const tasks = await Task.find({ projectId : req.params.id })

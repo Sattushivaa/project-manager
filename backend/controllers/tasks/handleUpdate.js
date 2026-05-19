@@ -1,4 +1,4 @@
-import { Task } from "../../models/task";
+import { Task } from "../../models/Task.js";
 
 const handleUpdateTask = async (req, res) => {
     const { id } = req.params;
