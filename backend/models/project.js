@@ -1,8 +1,9 @@
-import { Model, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const projectSchema = new Schema({
     name : String,
-    description : String
+    description : String,
+    parent : Schema.ObjectId
 }, {
     timestamps : {
         createdAt : true,
@@ -10,6 +11,6 @@ const projectSchema = new Schema({
     }
 })
 
-const Project = Model(projectSchema)
+const Project = model("Project",projectSchema)
 
 export { Project }

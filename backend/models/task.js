@@ -1,4 +1,4 @@
-import { Model, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const taskSchema = Schema.create({
     projectId : Schema.ObjectId,
@@ -13,7 +13,7 @@ const taskSchema = Schema.create({
     timestamps: true 
 })
 
-const Task = Model(taskSchema)
+const Task = model("Task",taskSchema)
 
 export {
     Task
