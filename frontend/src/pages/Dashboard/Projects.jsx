@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ProjectCard from '../../components/projectCard/ProjectCard.jsx';
+import './Projects.css';
 
 export default function Projects() {
     const navigate = useNavigate();
@@ -35,12 +36,16 @@ export default function Projects() {
   return (
     <>
     <div>Projects</div>
-    <button onClick={() => navigate("/projects/create")}>Create New Project</button>
+    <div className='createProjectBtnContainer'>
+    <button className='createNewProjectBtn' onClick={() => navigate("/projects/create")}>Create New Project</button>
+    </div>
+    <div className="ProjectsContainer">
     {
         projects.length>0?projects.map((project) => {
             return <ProjectCard key={project._id} project={project} />;
         }): <p>No projects found.</p>
     }
+    </div>
     </>
   )
 }

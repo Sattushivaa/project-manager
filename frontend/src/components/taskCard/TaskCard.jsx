@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './TaskCard.css'
 
 export default function TaskCard(props) {
   const { task } = props
@@ -44,7 +45,7 @@ export default function TaskCard(props) {
   }
 
   return (
-    <div style={{ border: '1px solid #ddd', padding: 8, marginBottom: 8 }}>
+    <div className='taskCard'>
       {isEditing ? (
         <form onSubmit={handleSave}>
           <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" required />
@@ -70,7 +71,7 @@ export default function TaskCard(props) {
           <div>
             <strong>Status:</strong> {task.status || 'todo'}
           </div>
-          <div style={{ marginTop: 8 }}>
+          <div className='taskCardActions'>
             <button onClick={() => setIsEditing(true)}>Edit</button>
             <button onClick={handleDelete} style={{ marginLeft: 8 }}>Delete</button>
           </div>

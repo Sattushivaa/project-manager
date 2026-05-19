@@ -1,0 +1,71 @@
+.taskCard {
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+.taskCard input[type="text"] {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+.taskCardActions {
+    margin-top: 8px;
+}
+.taskCardActions button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.taskCardActions button:nth-child(2) {
+    background-color: #f44336;
+    margin-left: 8px;
+}
+.taskCardActions button:nth-child(1) {
+    background-color: #2196F3;
+}
+.taskCard textarea {
+    display: block;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80%;
+}
+.taskCard .cancelBtn {
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+.taskCard .saveBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+        margin: 5px;
+}
+.taskCard .deleteBtn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+.taskCard input[type="text"] {
+    display: block;
+    padding: 8px;
+    margin-right: 8px;
+}

@@ -1,0 +1,16 @@
+.taskboxActions {
+  display: flex;
+  align-items:flex-end;
+  align-content: right;
+  margin-bottom: 12px;
+  text-align: right;
+  background-color: aliceblue;
+}
+.taskboxActions :nth-child(1) {
+  margin-left: auto;
+}
+.tasksContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}

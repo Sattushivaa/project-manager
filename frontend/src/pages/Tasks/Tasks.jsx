@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TaskCard from '../../components/taskCard/TaskCard.jsx'
 import AddTask from './AddTask.jsx'
+import './Tasks.css'
 
 export default function Tasks() {
     const projectId = window.location.pathname.split("/").pop()
@@ -35,7 +36,7 @@ export default function Tasks() {
       <h2>Tasks</h2>
       <AddTask projectId={projectId} onAdd={fetchTasks} />
 
-      <div style={{ marginBottom: 12 }}>
+      <div className='taskboxActions'>
         <input
           placeholder="Search by title"
           value={search}
@@ -51,7 +52,7 @@ export default function Tasks() {
         <button onClick={fetchTasks} style={{ marginLeft: 8 }}>Refresh</button>
       </div>
 
-      <div>
+      <div className='tasksContainer'>
         {filtered.length === 0 ? (
           <p>No tasks found.</p>
         ) : (
